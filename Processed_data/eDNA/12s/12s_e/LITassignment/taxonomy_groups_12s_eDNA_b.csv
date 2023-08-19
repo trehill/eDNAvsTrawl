@@ -1,0 +1,25 @@
+level,LCT,class,order,family,genus,species,all_species
+species,Alosa sapidissima,NA,Clupeiformes,Clupeidae,Alosa,Alosa sapidissima,Alosa sapidissima
+species,Anoplopoma fimbria,NA,Scorpaeniformes,Anoplopomatidae,Anoplopoma,Anoplopoma fimbria,Anoplopoma fimbria
+species,Beringraja binoculata,Elasmobranchii,Rajiformes,Rajidae,Beringraja,Beringraja binoculata,Beringraja binoculata
+species,Clupea pallasii,NA,Clupeiformes,Clupeidae,Clupea,Clupea pallasii,Clupea pallasii
+species,Eopsetta jordani,NA,Pleuronectiformes,Pleuronectidae,Eopsetta,Eopsetta jordani,Eopsetta jordani
+species,Gadus chalcogrammus,NA,Gadiformes,Gadidae,Gadus,Gadus chalcogrammus,Gadus chalcogrammus
+species,Glyptocephalus zachirus,NA,Pleuronectiformes,Pleuronectidae,Glyptocephalus,Glyptocephalus zachirus,Glyptocephalus zachirus
+species,Hexagrammos decagrammus,NA,Scorpaeniformes,Hexagrammidae,Hexagrammos,Hexagrammos decagrammus,Hexagrammos decagrammus
+species,Hippoglossoides elassodon,NA,Pleuronectiformes,Pleuronectidae,Hippoglossoides,Hippoglossoides elassodon,Hippoglossoides elassodon
+species,Leptoclinus maculatus,NA,Perciformes,Stichaeidae,Leptoclinus,Leptoclinus maculatus,Leptoclinus maculatus
+species,Merluccius productus,NA,Gadiformes,Merlucciidae,Merluccius,Merluccius productus,Merluccius productus
+species,Microstomus pacificus,NA,Pleuronectiformes,Pleuronectidae,Microstomus,Microstomus pacificus,Microstomus pacificus
+species,Oncorhynchus gorbuscha,NA,Salmoniformes,Salmonidae,Oncorhynchus,Oncorhynchus gorbuscha,Oncorhynchus gorbuscha
+species,Oncorhynchus keta,NA,Salmoniformes,Salmonidae,Oncorhynchus,Oncorhynchus keta,Oncorhynchus keta
+species,Oncorhynchus kisutch,NA,Salmoniformes,Salmonidae,Oncorhynchus,Oncorhynchus kisutch,Oncorhynchus kisutch
+species,Oncorhynchus nerka,NA,Salmoniformes,Salmonidae,Oncorhynchus,Oncorhynchus nerka,Oncorhynchus nerka
+species,Phytichthys chirus,NA,Perciformes,Stichaeidae,Phytichthys,Phytichthys chirus,Phytichthys chirus
+species,Sebastes crameri,NA,Scorpaeniformes,Sebastidae,Sebastes,Sebastes crameri,Sebastes crameri
+species,Sebastes mystinus,NA,Scorpaeniformes,Sebastidae,Sebastes,Sebastes mystinus,Sebastes mystinus
+species,Squalus suckleyi,Elasmobranchii,Squaliformes,Squalidae,Squalus,Squalus suckleyi,Squalus suckleyi
+species,Thaleichthys pacificus,NA,Osmeriformes,Osmeridae,Thaleichthys,Thaleichthys pacificus,Thaleichthys pacificus
+species,NA,NA,Scorpaeniformes,Sebastidae,Sebastes,NA,NA
+species,Reinhardtius hippoglossoides,NA,Pleuronectiformes,Pleuronectidae,Reinhardtius,Reinhardtius hippoglossoides,Reinhardtius hippoglossoides
+genus,Sebastes caurinus/maliger,NA,Scorpaeniformes,Sebastidae,Sebastes,Sebastes caurinus/maliger,"Sebastes caurinus, Sebastes maliger"

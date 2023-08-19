@@ -1,0 +1,46 @@
+level,LCT,class,order,family,genus,species,all_species
+species,Alosa sapidissima,NA,Clupeiformes,Clupeidae,Alosa,Alosa sapidissima,Alosa sapidissima
+species,Ammodytes personatus,NA,Perciformes,Ammodytidae,Ammodytes,Ammodytes personatus,Ammodytes personatus
+species,Anoplopoma fimbria,NA,Scorpaeniformes,Anoplopomatidae,Anoplopoma,Anoplopoma fimbria,Anoplopoma fimbria
+species,Artedius lateralis,NA,Scorpaeniformes,Cottidae,Artedius,Artedius lateralis,Artedius lateralis
+species,Bathylagus pacificus,NA,Osmeriformes,Bathylagidae,Bathylagus,Bathylagus pacificus,Bathylagus pacificus
+species,Citharichthys sordidus,NA,Pleuronectiformes,Paralichthyidae,Citharichthys,Citharichthys sordidus,Citharichthys sordidus
+species,Citharichthys stigmaeus,NA,Pleuronectiformes,Paralichthyidae,Citharichthys,Citharichthys stigmaeus,Citharichthys stigmaeus
+species,Clupea pallasii,NA,Clupeiformes,Clupeidae,Clupea,Clupea pallasii,Clupea pallasii
+species,Cryptacanthodes giganteus,NA,Perciformes,Cryptacanthodidae,Cryptacanthodes,Cryptacanthodes giganteus,Cryptacanthodes giganteus
+species,Cymatogaster aggregata,NA,Perciformes,Embiotocidae,Cymatogaster,Cymatogaster aggregata,Cymatogaster aggregata
+species,Embiotoca lateralis,NA,Perciformes,Embiotocidae,Embiotoca,Embiotoca lateralis,Embiotoca lateralis
+species,Engraulis mordax,NA,Clupeiformes,Engraulidae,Engraulis,Engraulis mordax,Engraulis mordax
+species,Enophrys bison,NA,Scorpaeniformes,Cottidae,Enophrys,Enophrys bison,Enophrys bison
+species,Gadus chalcogrammus,NA,Gadiformes,Gadidae,Gadus,Gadus chalcogrammus,Gadus chalcogrammus
+species,Gadus macrocephalus,NA,Gadiformes,Gadidae,Gadus,Gadus macrocephalus,Gadus macrocephalus
+species,Glyptocephalus zachirus,NA,Pleuronectiformes,Pleuronectidae,Glyptocephalus,Glyptocephalus zachirus,Glyptocephalus zachirus
+species,Gobiesox maeandricus,NA,Gobiesociformes,Gobiesocidae,Gobiesox,Gobiesox maeandricus,Gobiesox maeandricus
+species,Hexagrammos decagrammus,NA,Scorpaeniformes,Hexagrammidae,Hexagrammos,Hexagrammos decagrammus,Hexagrammos decagrammus
+species,Hippoglossus stenolepis,NA,Pleuronectiformes,Pleuronectidae,Hippoglossus,Hippoglossus stenolepis,Hippoglossus stenolepis
+species,Hydrolagus colliei,Holocephali,Chimaeriformes,Chimaeridae,Hydrolagus,Hydrolagus colliei,Hydrolagus colliei
+species,Lyopsetta exilis,NA,Pleuronectiformes,Pleuronectidae,Lyopsetta,Lyopsetta exilis,Lyopsetta exilis
+species,Mallotus villosus,NA,Osmeriformes,Osmeridae,Mallotus,Mallotus villosus,Mallotus villosus
+species,Merluccius productus,NA,Gadiformes,Merlucciidae,Merluccius,Merluccius productus,Merluccius productus
+species,Microstomus pacificus,NA,Pleuronectiformes,Pleuronectidae,Microstomus,Microstomus pacificus,Microstomus pacificus
+species,Odontopyxis trispinosa,NA,Scorpaeniformes,Agonidae,Odontopyxis,Odontopyxis trispinosa,Odontopyxis trispinosa
+species,Oncorhynchus gorbuscha,NA,Salmoniformes,Salmonidae,Oncorhynchus,Oncorhynchus gorbuscha,Oncorhynchus gorbuscha
+species,Oncorhynchus keta,NA,Salmoniformes,Salmonidae,Oncorhynchus,Oncorhynchus keta,Oncorhynchus keta
+species,Oncorhynchus kisutch,NA,Salmoniformes,Salmonidae,Oncorhynchus,Oncorhynchus kisutch,Oncorhynchus kisutch
+species,Oncorhynchus nerka,NA,Salmoniformes,Salmonidae,Oncorhynchus,Oncorhynchus nerka,Oncorhynchus nerka
+species,Oncorhynchus tshawytscha,NA,Salmoniformes,Salmonidae,Oncorhynchus,Oncorhynchus tshawytscha,Oncorhynchus tshawytscha
+species,Pholis clemensi,NA,Perciformes,Pholidae,Pholis,Pholis clemensi,Pholis clemensi
+species,Pholis laeta,NA,Perciformes,Pholidae,Pholis,Pholis laeta,Pholis laeta
+species,Sebastes entomelas,NA,Scorpaeniformes,Sebastidae,Sebastes,Sebastes entomelas,Sebastes entomelas
+species,Sebastes mystinus,NA,Scorpaeniformes,Sebastidae,Sebastes,Sebastes mystinus,Sebastes mystinus
+species,Sebastolobus macrochir,NA,Scorpaeniformes,Sebastidae,Sebastolobus,Sebastolobus macrochir,Sebastolobus macrochir
+species,Squalus suckleyi,Elasmobranchii,Squaliformes,Squalidae,Squalus,Squalus suckleyi,Squalus suckleyi
+species,Thaleichthys pacificus,NA,Osmeriformes,Osmeridae,Thaleichthys,Thaleichthys pacificus,Thaleichthys pacificus
+NA,NA,NA,NA,NA,NA,NA,NA
+genus,Liparis dennyi/fucensis,NA,Scorpaeniformes,Liparidae,Liparis,Liparis dennyi/fucensis,"Liparis dennyi, Liparis fucensis"
+genus,Sebastes crameri/diploproa,NA,Scorpaeniformes,Sebastidae,Sebastes,Sebastes crameri/diploproa,"Sebastes crameri, Sebastes diploproa"
+genus,Xiphister atropurpureus/mucosus,NA,Perciformes,Stichaeidae,Xiphister,Xiphister atropurpureus/mucosus,"Xiphister atropurpureus, Xiphister mucosus"
+genus,Anoplarchus insignis/purpurescens,NA,Perciformes,Stichaeidae,Anoplarchus,Anoplarchus insignis/purpurescens,"Anoplarchus insignis, Anoplarchus purpurescens"
+genus,Oligocottus maculosus/snyderi,NA,Scorpaeniformes,Cottidae,Oligocottus,Oligocottus maculosus/snyderi,"Oligocottus maculosus, Oligocottus snyderi"
+genus,Sebastes caurinus/maliger,NA,Scorpaeniformes,Sebastidae,Sebastes,Sebastes caurinus/maliger,"Sebastes caurinus, Sebastes maliger"
+family,Pleuronectidae1,NA,Pleuronectiformes,Pleuronectidae,Pleuronectidae1,Pleuronectidae1,"Isopsetta isolepis, Parophrys vetulus, Psettichthys melanostictus"
