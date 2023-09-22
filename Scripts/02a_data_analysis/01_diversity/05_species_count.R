@@ -105,33 +105,33 @@ plot <- ggplot(df, aes(x=as.factor(gamma_detection_method), y=n)) +
  southern <-  data2[data2$leg == 'southern',]
  
  #what species were detected in each region? 
- unique(northern$LCT) #48 species total 
+ unique(northern$LCT) #37 species total 
  
- unique(southern$LCT) #67 species total 
+ unique(southern$LCT) #54 species total 
  
  #how many species in both at each region? 
  n_beta <-  northern[northern$beta_detection_method == 'both eDNA/trawl',]
  s_beta <-  southern[southern$beta_detection_method  == 'both eDNA/trawl',]
  
- unique(n_beta$LCT) #12 species total 
- unique(s_beta$LCT) #16 species total 
+ unique(n_beta$LCT) #10 species total 
+ unique(s_beta$LCT) #15 species total 
  
  #how many species only in eDNA in each region? 
  
  n_beta <-  northern[northern$beta_detection_method == 'only eDNA',]
  s_beta <-  southern[southern$beta_detection_method  == 'only eDNA',]
  
- unique(n_beta$LCT) #34 species total 
+ unique(n_beta$LCT) #24 species total 
  
- unique(s_beta$LCT) #47 species total 
+ unique(s_beta$LCT) #34 species total 
  
  #how many species only in trawl at each region?
  n_beta <-  northern[northern$beta_detection_method == 'only trawl',]
  s_beta <-  southern[southern$beta_detection_method  == 'only trawl',]
  
- unique(n_beta$LCT) #2 species total 
+ unique(n_beta$LCT) #3 species total 
  
- unique(s_beta$LCT) #4 species total 
+ unique(s_beta$LCT) #5 species total 
  
  #Find mean number of species with overlap between methods at different scales 
  
@@ -168,7 +168,7 @@ overlap <- overlap %>%
 
 overlap$overlap_perc <- ((overlap$spp_count / overlap$set_count)*100)
 
-mean(overlap$overlap_perc) #22% #percentage overlap by both methods
+mean(overlap$overlap_perc) #25% #percentage overlap by both methods
 
 #find percentage overlap per set for eDNA metabarcoding 
 
@@ -186,7 +186,36 @@ overlap <- overlap %>%
 
 overlap$overlap_perc <- ((overlap$spp_count / overlap$set_count)*100)
 
-mean(overlap$overlap_perc) #94% #percentage overlap by eDNA
+mean(overlap$overlap_perc) #92% #percentage overlap by eDNA
 
+eDNA <- meta <- read.csv(here::here("Processed_data", 
+                                    "eDNA",
+                                    "datasets", 
+                                    "eDNA_allsets_analysisA.csv"),
+                         head=TRUE)
+
+trawl <- read.csv(here::here("Processed_data", 
+                             "trawl",
+                             "catch_data", 
+                             "trawl_catch_clean.csv"),
+                  head=TRUE)
+
+
+#Which species was most detected in eDNA? 
+x <- eDNA
+
+count_spp <- x %>% 
+  count(LCT) #count how many times a species is seen across the dataset 
+
+#Clupea Pallassi + Gadus Chalgrommus
+
+
+#Which species was most detected in trawl?
+x <- trawl
+
+count_spp <- x %>% 
+  count(LCT) #count how many times a species is seen across the dataset 
+
+#Clupea Pallassi + Gadus Chalgrommus, the same as eDNA 
 
 

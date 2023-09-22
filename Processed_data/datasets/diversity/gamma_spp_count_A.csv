@@ -1,5 +1,5 @@
 LCT,gamma_detection_method,n
-Allosmerus elongatus,both eDNA/trawl,2
+Allosmerus elongatus,only trawl,1
 Alosa sapidissima,both eDNA/trawl,6
 Ammodytes hexapterus,both eDNA/trawl,6
 Anoplarchus insignis/purpurescens,only eDNA,2
@@ -7,7 +7,6 @@ Anoplopoma fimbria,both eDNA/trawl,12
 Artedius harringtoni,only eDNA,1
 Artedius lateralis,only eDNA,1
 Ascelichthys rhodorus,only eDNA,1
-Atheresthes stomias,only eDNA,3
 Beringraja binoculata,only eDNA,1
 Citharichthys sordidus,only eDNA,9
 Citharichthys stigmaeus,only eDNA,6
@@ -21,7 +20,7 @@ Engraulis mordax,both eDNA/trawl,5
 Entosphenus tridentatus,only trawl,1
 Eopsetta jordani,only eDNA,3
 Gadus chalcogrammus,both eDNA/trawl,16
-Gadus macrocephalus,only eDNA,14
+Gadus macrocephalus,only eDNA,9
 Glyptocephalus zachirus,only eDNA,12
 Gobiesox maeandricus,only eDNA,2
 Hexagrammos decagrammus,only eDNA,6
@@ -35,7 +34,6 @@ Liparidae1,only eDNA,1
 Liparis dennyi/fucensis,only eDNA,2
 Liparis fucensis,only eDNA,1
 Liparis mucosus,only eDNA,2
-Lycodapus mandibularis,only eDNA,2
 Lyopsetta exilis,only eDNA,2
 Mallotus villosus,both eDNA/trawl,2
 Merluccius productus,both eDNA/trawl,16
@@ -55,7 +53,6 @@ Pholis laeta/ornata,only eDNA,2
 Phytichthys chirus,only eDNA,6
 Pleuronectidae1,only eDNA,1
 Reinhardtius hippoglossoides,only trawl,1
-Salvelinus malma,only eDNA,3
 Sebastes,both eDNA/trawl,15
 Sebastolobus macrochir,only eDNA,1
 Spirinchus starksi,only trawl,1

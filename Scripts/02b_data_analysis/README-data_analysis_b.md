@@ -1,4 +1,4 @@
-README - data_analysis A
+README - data_analysis B
 
   
 FOLDER: Diversity 
@@ -12,13 +12,13 @@ This folder contains scripts for comparing community assemblages
   we also investigate species uniquely in the trawl + see if they are represented in NCBI
     
   inputs: 
-  "detections_all_A_.csv"
+  "detections_all_B_.csv"
   "trawl_catch_clean.csv"
-  eDNA_allsets_analysisA_.csv"
+  eDNA_allsets_analysisB_.csv"
   
   output: 
   gamma_observations.png 
-  gamma_species.png
+  gamma_species.png (observations + species)
   gamma_venn.png
   
 
@@ -27,10 +27,10 @@ This folder contains scripts for comparing community assemblages
   quantitative Euler plots (2 for N, 2 for S)
   
   inputs: 
-  "detections_all_A.csv"
+  "detections_all_B.csv"
   "trawl_metadata.csv"
   "trawl_catch_clean.csv"
-  "eDNA_allsets_analysisA_.csv"
+  "eDNA_allsets_analysisB_.csv"
 
   outputs: 
   beta_observations.png
@@ -44,7 +44,7 @@ This folder contains scripts for comparing community assemblages
   qualitative Euler plots (2 per site)
   
   inputs: 
-	"detections_all_A.csv"
+	"detections_all_B.csv"
 
   
   outputs:
@@ -55,7 +55,7 @@ This folder contains scripts for comparing community assemblages
   goal: calculate Jaccard indices
   
   inputs: 
-  "detections_all_A_.csv"
+  "detections_all_B.csv"
   "trawl_metadata.csv"
   
   outputs: 
@@ -67,7 +67,7 @@ This folder contains scripts for comparing community assemblages
 	goal: visualize jaccard components and format values into a table
 
 	input: 
-	"diversity_indices_all.csv"
+	"diversity_indices_all_B_.csv"
 	
 	output: 
 	tables of dissimilarities 
@@ -78,7 +78,7 @@ This folder contains scripts for comparing community assemblages
 	gives species count in north and south regions and overlap 
   
   inputs: 
-   "detections_all_A.csv"
+   "detections_all_B.csv"
    "trawl_metadata.csv"
    
    outputs: 
@@ -90,7 +90,7 @@ This folder contains scripts for comparing community assemblages
 FOLDER: Traits 
 
   
-01_lengthconversions.R
+01_lengthconversions.R (same as analysis A)
 	goal: convert fork length to total length for species caught in trawl 
 	
 	inputs:
@@ -103,7 +103,7 @@ FOLDER: Traits
   goal: make length distribution graphs from maximum spp lengths (sourced from FishBase)
   
   inputs: 
-  "detections_all_A.csv"
+  "detections_all_Bcsv"
   "traitdatabase.csv" curated trait database by hand by searching FishBase 
   		(eventually could write script "trait_collection" to do this with code )
    "length_conversions.csv"
@@ -127,7 +127,7 @@ FOLDER: Traits
 	QCS_biology.csv
 	WCHG_biology.csv
 	HS_biology.csv
-	"detections_all_A.csv"
+	"detections_all_B.csv"
 			
 			
 		detections_all_A_.csv
@@ -143,8 +143,8 @@ FOLDER: Traits
 	eDNA 
 
 	inputs: 
-	"traits_mean_lengths_A_.csv"
-	"detections_all_A_.csv"
+	"traits_mean_lengths_B.csv"
+	"detections_all_B.csv"
 	"length_conversions.csv"
 	
 	outputs: 
@@ -158,7 +158,7 @@ FOLDER: Traits
 
 	
 	inputs: 
-	"detections_all_A_.csv"
+	"detections_all_B.csv"
 	"traitdatabase.csv"
 	
 	outputs: 
@@ -172,7 +172,7 @@ FOLDER: Index
 	goal: exploring eDNA read index over biomass 
 	
 	inputs: 
-	"detections_all_A.csv
+	"detections_all_B.csv
 	"trawl_metadata.csv
 	
 	outputs: 
@@ -182,7 +182,7 @@ biomass.R
 	goal: compare biomass relationship between trawl + eDNA, perform t-test
 	
 	inputs: 
-	"detections_all_A.csv"
+	"detections_all_B.csv"
 	"trawl_metadata.csv"
 	
 	outputs: 
@@ -195,11 +195,11 @@ mean_biomass.R
 
 	
 	inputs 
-	"biomass_all_.csv"
+	"biomass_all_b.csv"
 	
 	outputs:
-	"species_biomass_sum_all_.csv"
-	"species_biomass_all.csv"
+	"species_biomass_sum_all_b.csv"
+	"species_biomass_all_b_.csv"
 	"eulerbiomass_all.png"
 
 
@@ -219,7 +219,7 @@ PCoA_samples.R
 		- plot 
 	
 	inputs: 
-		"detections_all.csv"
+		"detections_all_B.csv"
 		"trawl_metadata.csv"
 		"eDNA_metadata.csv"
 
@@ -236,7 +236,7 @@ accumulation_curves.R
 	uses iNEXT package 
 	
 	inputs: 
-	"detections_all_A_.csv"
+	"detections_all_B.csv"
 	
 	outputs: 	
 	curve_all.png 

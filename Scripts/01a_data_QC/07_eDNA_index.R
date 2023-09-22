@@ -83,7 +83,9 @@ data12se_asv_taxonomy_nc_lor_nfc_ei_r_a_nt <- data12se_asvmatrix_nc_lor_nfc_ei %
                            values_to = "asv_read_raw")) %>%
   #merge with taxonomies
   right_join(.,
-             TRdata12se_taxonomy) #only retain ASVs with taxonomic assignments
+             TRdata12se_taxonomy) %>%#only retain ASVs with taxonomic assignments
+  distinct()
+  
 
 
 #add column of raw read numbers for each taxonomic level
@@ -259,7 +261,8 @@ data12su_asv_taxonomy_nc_lor_nfc_ei_r_a_nt <- data12su_asvmatrix_nc_lor_nfc_ei %
                            values_to = "asv_read_raw")) %>%
   #merge with taxonomies
   right_join(.,
-             TRdata12su_taxonomy) #only retain ASVs with taxonomic assignments
+             TRdata12su_taxonomy) %>% #only retain ASVs with taxonomic assignments
+  distinct()
 
 
 #add column of raw read numbers for each taxonomic level

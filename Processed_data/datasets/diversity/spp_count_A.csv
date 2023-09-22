@@ -1,6 +1,5 @@
 LCT,n,gamma_detection_method,beta_detection_method,alpha_detection_method
-Allosmerus elongatus,2,both eDNA/trawl,only trawl,only trawl
-Allosmerus elongatus,2,both eDNA/trawl,only eDNA,only eDNA
+Allosmerus elongatus,1,only trawl,only trawl,only trawl
 Alosa sapidissima,6,both eDNA/trawl,both eDNA/trawl,only eDNA
 Alosa sapidissima,6,both eDNA/trawl,both eDNA/trawl,only trawl
 Ammodytes hexapterus,6,both eDNA/trawl,only eDNA,only eDNA
@@ -13,7 +12,6 @@ Anoplopoma fimbria,12,both eDNA/trawl,both eDNA/trawl,only trawl
 Artedius harringtoni,1,only eDNA,only eDNA,only eDNA
 Artedius lateralis,1,only eDNA,only eDNA,only eDNA
 Ascelichthys rhodorus,1,only eDNA,only eDNA,only eDNA
-Atheresthes stomias,3,only eDNA,only eDNA,only eDNA
 Beringraja binoculata,1,only eDNA,only eDNA,only eDNA
 Citharichthys sordidus,9,only eDNA,only eDNA,only eDNA
 Citharichthys stigmaeus,6,only eDNA,only eDNA,only eDNA
@@ -33,7 +31,7 @@ Entosphenus tridentatus,1,only trawl,only trawl,only trawl
 Eopsetta jordani,3,only eDNA,only eDNA,only eDNA
 Gadus chalcogrammus,16,both eDNA/trawl,both eDNA/trawl,only eDNA
 Gadus chalcogrammus,16,both eDNA/trawl,both eDNA/trawl,both eDNA/trawl
-Gadus macrocephalus,14,only eDNA,only eDNA,only eDNA
+Gadus macrocephalus,9,only eDNA,only eDNA,only eDNA
 Glyptocephalus zachirus,12,only eDNA,only eDNA,only eDNA
 Gobiesox maeandricus,2,only eDNA,only eDNA,only eDNA
 Hexagrammos decagrammus,6,only eDNA,only eDNA,only eDNA
@@ -47,7 +45,6 @@ Liparidae1,1,only eDNA,only eDNA,only eDNA
 Liparis dennyi/fucensis,2,only eDNA,only eDNA,only eDNA
 Liparis fucensis,1,only eDNA,only eDNA,only eDNA
 Liparis mucosus,2,only eDNA,only eDNA,only eDNA
-Lycodapus mandibularis,2,only eDNA,only eDNA,only eDNA
 Lyopsetta exilis,2,only eDNA,only eDNA,only eDNA
 Mallotus villosus,2,both eDNA/trawl,only trawl,only trawl
 Mallotus villosus,2,both eDNA/trawl,only eDNA,only eDNA
@@ -78,7 +75,6 @@ Pholis laeta/ornata,2,only eDNA,only eDNA,only eDNA
 Phytichthys chirus,6,only eDNA,only eDNA,only eDNA
 Pleuronectidae1,1,only eDNA,only eDNA,only eDNA
 Reinhardtius hippoglossoides,1,only trawl,only trawl,only trawl
-Salvelinus malma,3,only eDNA,only eDNA,only eDNA
 Sebastes,15,both eDNA/trawl,both eDNA/trawl,only eDNA
 Sebastes,15,both eDNA/trawl,both eDNA/trawl,both eDNA/trawl
 Sebastolobus macrochir,1,only eDNA,only eDNA,only eDNA

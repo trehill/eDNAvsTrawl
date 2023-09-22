@@ -207,37 +207,6 @@ physeq %>%
   scale_color_manual(values = c("#FCC442", "#5491cf")) 
 
 
-#Let's add boxplots on the side 
-plot <- physeq %>% 
-  dist_calc(dist = "jaccard", binary=TRUE) %>% 
-  ord_calc("PCoA") %>% 
-  ord_plot(color = "method",  size = 2, auto_caption = NA) +
-  scale_color_manual(values = c("#FCC442", "#5491cf"),aesthetics = c("fill", "colour"), name = "detection" ) +
-  theme_bw() +
-  ggside::geom_xsideboxplot(aes(fill = method, y = method), orientation = "y") +
-  ggside::geom_ysideboxplot(aes(fill = method, x = method), orientation = "x") +
-  ggside::scale_xsidey_discrete(labels = NULL) +
-  ggside::scale_ysidex_discrete(labels = NULL) +
-  ggside::theme_ggside_void() 
-
-plot 
-
-#Let's add boxplots on the side, with area distinction
-plot <- physeq %>% 
-  dist_calc(dist = "jaccard", binary=TRUE) %>% 
-  ord_calc("PCoA") %>% 
-  ord_plot(color = "method", shape = 'region', size = 2, auto_caption = NA) +
-  scale_color_manual(values = c("#00AFBB","#FCC442", "#5491cf"),aesthetics = c("fill", "colour"), name = "detection" ) +
-  theme_bw() +
-  ggside::geom_xsideboxplot(aes(fill = method, y = method), orientation = "y") +
-  ggside::geom_ysideboxplot(aes(fill = method, x = method), orientation = "x") +
-  ggside::scale_xsidey_discrete(labels = NULL) +
-  ggside::scale_ysidex_discrete(labels = NULL) +
-  ggside::theme_ggside_void() 
-
-plot 
-
-
 #Plots using ggplot
 
 PCOA <- ordinate(physeq, "PCoA", "jaccard", binary=TRUE)
@@ -255,84 +224,6 @@ ggsave("./Outputs/analysis_a/pcoa/PCoA1.png",
        plot = plot,
        width = 12, height = 7, units = "in")
 
-
-#add regional distinction
-
-plot <- plot_ordination(physeq, PCOA, type="samples", color="method", shape='region') +
-  scale_color_manual(values = c("#00AFBB","#FCC442", "#5491cf")) +
-  theme_bw() +
-  stat_ellipse() +
-  labs(title = "PCoA ordination" , color = "Detection", shape= 'Region') 
-
-plot
-
-
-#Let's add boxplots on the side, but with the right colors 
-
-plot <- plot_ordination(physeq, PCOA, type="samples", color="method") +
-  scale_color_manual(values = c("#00AFBB","#FCC442", "#5491cf")) +
-  theme_bw() +
-  stat_ellipse() +
-  labs(title = "PCoA ordination" , color = "Detection") +
-  ggside::geom_xsideboxplot(aes(fill = NULL, y = method), orientation = "y", outlier.shape=NA) +
-  ggside::geom_ysideboxplot(aes(fill = NULL, x = method), orientation = "x", outlier.shape=NA) +
-  ggside::scale_xsidey_discrete(labels = NULL) +
-  ggside::scale_ysidex_discrete(labels = NULL) +
-  ggside::theme_ggside_void() 
-
-
-plot
-
-
-#trying to add ellipses 
-
-#Let's add boxplots on the side, with area distinction
-
-plot <- physeq %>% 
-  dist_calc(dist = "jaccard", binary=TRUE) %>% 
-  ord_calc("PCoA") %>% 
-  ord_plot(color = "method", shape = 'method', size = 2) +
-  scale_color_manual(values = c("#FCC442","#5491cf"),aesthetics = c("fill", "colour"), name = "legend" ) +
-  theme_bw() +
-  stat_ellipse(aes(linetype = region)) +
-  ggside::geom_xsideboxplot(aes(fill = method, y = method), orientation = "y") +
-  ggside::geom_ysideboxplot(aes(fill = method, x = method), orientation = "x") +
-  ggside::scale_xsidey_discrete(labels = NULL) +
-  ggside::scale_ysidex_discrete(labels = NULL) +
-  ggside::theme_ggside_void() 
-
-plot 
-
-#add elipses
-
-plot <- physeq %>% 
-  dist_calc(dist = "jaccard", binary=TRUE) %>% 
-  ord_calc("PCoA") %>% 
-  ord_plot(color = "method", size = 2) +
-  scale_color_manual(values = c("#FCC442","#5491cf"),aesthetics = c("fill", "colour"), name = "method" ) +
-  theme_bw() +
-  stat_ellipse(aes(linetype = region)) +
-  ggside::geom_xsideboxplot(aes(fill = method, y = method), orientation = "y") +
-  ggside::geom_ysideboxplot(aes(fill = method, x = method), orientation = "x") +
-  ggside::scale_xsidey_discrete(labels = NULL) +
-  ggside::scale_ysidex_discrete(labels = NULL) +
-  ggside::theme_ggside_void() 
-
-plot
-
-
-#let's take the elipses out- every point is either N/S and either eDNA or trawl 
-#color = detection
-#shape = region
-
-plot <- physeq %>% 
-  dist_calc(dist = "jaccard", binary = TRUE) %>% 
-  ord_calc("PCoA") %>% 
-  ord_plot(color = "method", shape= 'region', size = 2) +
-  scale_color_manual(values = c("#FCC442", "#5491cf")) +
-  stat_ellipse(aes(linetype = region)) 
-
-plot
 
 
 #make ordination where each sample is connected by a line to its corresponding set
@@ -353,76 +244,9 @@ plot <- ord_plot(ordination, color = "method", shape = "region", size = 2, clip 
 
 plot
 
-#MDS1 = 26.9%
-#MDS2 = 15.7.3% 
+#MDS1 = 24.8%
+#MDS2 = 16.4% 
 
-#going to change axis titles to PCoA because it is confusing that it is an MDS but they are the same thing
-plot <- ord_plot(ordination, color = "method", shape = "region", size = 2, clip = 'on') +
-  scale_color_manual(values = c("#FCC442", "#5491cf")) +
-  geom_line(aes(group = set, linetype = region), color = "black") +  # Set linetype based on region
-  geom_dl(aes(label = set), method = list(dl.trans(x = x + 0.2), "last.points", cex = 0.8)) +
-  geom_dl(aes(label = set), method = list(dl.trans(x = x - 0.2), "first.points", cex = 0.8)) +
-  labs(title = "",
-       x = "PCo1 [26.9%]",  # Change the X-axis title
-       y = "PCo2 [15.7%]")  # Change the Y-axis title
-
-#increase font size 
-plot <- plot + theme(
-  text = element_text(size = 14),  # Increase font size for all text elements
-  axis.title = element_text(size = 16),  # Increase font size for axis titles
-  legend.title = element_text(size = 16),  # Increase font size for legend title
-  legend.text = element_text(size = 14)  # Increase font size for legend text
-)
-
-plot
-
-ggsave("./Outputs/analysis_a/pcoa/PCoA_panel1.png", 
-       plot = plot,
-       width = 12, height = 7, units = "in")
-
-#make plot with four ovals 
-  #1. trawl S
-  #2. trawl N
-  #3. eDNA S
-  #4. eDNA N 
-
-plot <- physeq %>% 
-  dist_calc(dist = "jaccard", binary = TRUE) %>% 
-  ord_calc("PCoA") %>% 
-  ord_plot(color = "method", shape= 'region', size = 2) +
-  scale_color_manual(values = c("#FCC442", "#5491cf")) +
-  stat_ellipse(aes(linetype = region_method, color=method)) +
-  scale_linetype_manual(values = c(trawl_northern = "solid", trawl_southern = "dashed", eDNA_southern = 'dashed', eDNA_northern = 'solid'))
-
-
-plot
-
-#add axis title change
-
-plot <- physeq %>% 
-  dist_calc(dist = "jaccard", binary = TRUE) %>% 
-  ord_calc("PCoA") %>% 
-  ord_plot(color = "method", shape= 'region', size = 2) +
-  scale_color_manual(values = c("#FCC442", "#5491cf")) +
-  stat_ellipse(aes(linetype = region_method, color=method)) +
-  scale_linetype_manual(values = c(trawl_northern = "solid", trawl_southern = "dashed", eDNA_southern = 'dashed', eDNA_northern = 'solid')) +
-  labs(title = "",
-       x = "PCo1 [26.9%]",  # Change the X-axis title
-       y = "PCo2 [15.7%]")  # Change the Y-axis title
-
-plot <- plot + theme(
-  text = element_text(size = 14),  # Increase font size for all text elements
-  axis.title = element_text(size = 16),  # Increase font size for axis titles
-  legend.title = element_text(size = 16),  # Increase font size for legend title
-  legend.text = element_text(size = 14)  # Increase font size for legend text
-)
-
-plot
-
-
-ggsave("./Outputs/analysis_a/pcoa/PCoA_panel2.png", 
-       plot = plot,
-       width = 12, height = 7, units = "in")
 
 #plot 
 #color = north or south region 
@@ -441,36 +265,54 @@ plot <- ord_plot(ordination, color = "region", shape = "method", size = 4, clip 
   scale_color_manual(values = c("#FCC442", "#5491cf")) +
   scale_shape_manual(values = custom_shapes) +  # Set custom shapes
   geom_line(aes(group = set, color = region)) +  # Set linetype and color based on region
-  geom_dl(aes(label = set), method = list(dl.trans(x = x + 0.2), "last.points", cex = 0.8)) +
-  geom_dl(aes(label = set), method = list(dl.trans(x = x - 0.2), "first.points", cex = 0.8)) +
-  coord_cartesian(xlim = c(-2, 2))
+  geom_dl(aes(label = set), method = list(dl.trans(x = x + 0.2), "last.points", cex = 1)) +
+  geom_dl(aes(label = set), method = list(dl.trans(x = x - 0.2), "first.points", cex = 1)) +
+  coord_cartesian(xlim = c(-1, 1)) +
+  labs(title = "",
+       x = "PCo1 [24.8%]",  # Change the X-axis title
+       y = "PCo2 [16.4%]")  + # Change the Y-axis title
+  theme(axis.title = element_text(size = 20),
+        axis.text = element_text(size = 20)) 
+plot
+
+###
+plot <- ord_plot(ordination, color = "region", shape = "method", size = 4, clip = 'on') +
+  scale_color_manual(values = c("#FCC442", "#5491cf")) +
+  scale_shape_manual(values = custom_shapes) +
+  geom_line(aes(group = set, color = region)) +
+  geom_dl(aes(label = set), method = list(dl.trans(x = x + 0.2), "last.points", cex = 1), position = position_jitter(height=0.2)) +
+  geom_dl(aes(label = set), method = list(dl.trans(x = x - 0.2), "first.points", cex = 1), position = position_jitter(height=0.2)) +
+  coord_cartesian(xlim = c(-1.2, 1.2)) +
+  labs(title = "",
+       x = "PCo1 [24.8%]",
+       y = "PCo2 [16.4%]") +
+  theme(axis.title = element_text(size = 20),
+        axis.text = element_text(size = 20))
 
 plot
+
+##
+plot <- ord_plot(ordination, color = "region", shape = "method", size = 4, clip = 'on') +
+  scale_color_manual(values = c("#FCC442", "#5491cf")) +
+  scale_shape_manual(values = custom_shapes) +
+  geom_line(aes(group = set, color = region)) +
+  geom_dl(aes(label = ifelse(method == "trawl", as.character(set), "")), 
+          method = list(dl.trans(x = x + 0.2), "last.points", cex = 1), position = position_jitter(width = 0.1)) +
+  coord_cartesian(xlim = c(-1.0, 1.0)) +
+  labs(title = "",
+       x = "PCo1 [24.8%]",
+       y = "PCo2 [16.4%]") +
+  theme(axis.title = element_text(size = 20),
+        axis.text = element_text(size = 20))
+
+plot
+
+
 
 ggsave("./Outputs/analysis_a/pcoa/PCoA_panel1.png", 
        plot = plot,
-       width = 12, height = 7, units = "in")
+       width = 7, height = 5, units = "in")
 
-
-#make plot with four ovals 
-#1. trawl S
-#2. trawl N
-#3. eDNA S
-#4. eDNA N 
-
-#we want northern to be yellow, and all southern to be blue 
-#we want eDNA to be dashed and unfilled
-#we want trawl to be solid and filled 
-plot <- physeq %>% 
-  dist_calc(dist = "jaccard", binary = TRUE) %>% 
-  ord_calc("PCoA") %>% 
-  ord_plot(color = "region", shape = "region_method", size = 2) +
-  scale_color_manual(values = c("#FCC442", "#5491cf")) +
-  scale_shape_manual(values = c(eDNA_northern = 1, eDNA_southern = 1, trawl_northern = 16, trawl_southern = 16)) +
-  stat_ellipse(aes(linetype = region_method, color = region)) +
-  scale_linetype_manual(values = c(trawl_northern = "solid", trawl_southern = "solid", eDNA_southern = 'dashed', eDNA_northern = 'dashed'))
-
-plot
 
 
 #PLOTS w/ convex hulls instead of ellipses 
@@ -479,15 +321,23 @@ plot
 plot <- physeq %>% 
   dist_calc(dist = "jaccard", binary = TRUE) %>% 
   ord_calc("PCoA") %>% 
-  ord_plot(color = "region", shape = "region_method", size = 2) +
+  ord_plot(color = "region", shape = "region_method", size = 4) +
   scale_color_manual(values = c("#FCC442", "#5491cf")) +
   scale_shape_manual(values = c(eDNA_northern = 1, eDNA_southern = 1, trawl_northern = 16, trawl_southern = 16)) +
   stat_chull(aes(linetype = region_method, color = region)) +
-  scale_linetype_manual(values = c(trawl_northern = "solid", trawl_southern = "solid", eDNA_southern = 'dashed', eDNA_northern = 'dashed'))
+  scale_linetype_manual(values = c(trawl_northern = "solid", trawl_southern = "solid", eDNA_southern = 'dashed', eDNA_northern = 'dashed')) +
+  labs(title = "",
+       x = "PCo1 [24.8%]",  # Change the X-axis title
+       y = "PCo2 [16.4%]")  + # Change the Y-axis title
+  theme(axis.title = element_text(size = 20),
+        axis.text = element_text(size = 20)) 
 
 plot
 
 ggsave("./Outputs/analysis_a/pcoa/PCoA_panel2.png", 
        plot = plot,
-       width = 12, height = 7, units = "in")
+       width = 7, height = 5, units = "in")
+
+
+
 

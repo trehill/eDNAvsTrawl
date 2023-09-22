@@ -18,7 +18,6 @@ library("lubridate")
 metadata_trawl<- read_csv(here::here("Processed_data",
                                      "eDNA",
                                      "metadata",
-                                     "clean_data",
                                      "eDNA_metadata.csv"))
 
 # 12se --------------------------------------------------------------------
@@ -31,7 +30,8 @@ data12Se_asvmatrix <- read_csv(here::here("Processed_data",
                                           "asv",
                                           "matrix",
                                           "data12se_asvmatrix_nc_lor.csv"))
-ncol(data12Se_asvmatrix)
+ncol(data12Se_asvmatrix) #41
+
 #join with meta_data
 data12Se_asvmatrix_meta<-left_join(metadata_trawl, rename(data12Se_asvmatrix, "sample_name"="...1"), by="sample_name")
 
@@ -73,7 +73,6 @@ data12Se_asvmatrix_nolowocc_nofieldcontrols<-data12Se_nolowocc_nofieldcontrols %
   spread(ASV, read_controls_rmd) 
 #this leaves NAs throughout table instead of 0s; replace NAs with 0
 data12Se_asvmatrix_nolowocc_nofieldcontrols[is.na(data12Se_asvmatrix_nolowocc_nofieldcontrols)] <- 0 #replace NAs with 0
-
 
 
 #write out the new data files
@@ -146,3 +145,5 @@ data12Su_asvmatrix_nolowocc_nofieldcontrols[is.na(data12Su_asvmatrix_nolowocc_no
 write_csv(data12Su_asvmatrix_nolowocc_nofieldcontrols, 
           here("Processed_data","eDNA","12s", "12s_u", "asv", "matrix",
                "data12Su_asvmatrix_nc_lor_nfc.csv"))
+
+

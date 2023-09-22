@@ -123,7 +123,7 @@ Walleye Pollock,2,Juan de Fuca Strait,9,2018-08-08T00:00:00Z,large,5,5,NA,Y,NA,G
 Walleye Pollock,NA,NA,10,NA,NA,NA,NA,NA,NA,101,Gadus chalcogrammus,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae ,Gadus,species,Gadus chalcogrammus
 White Bait Smelt,NA,NA,12,NA,NA,NA,NA,NA,NA,3,Allosmerus elongatus,Animalia,Chordata,Actinopterygii,Osmeriformes,Osmeridae,Allosmerus,species,Allosmerus elongatus
 Whitebait Smelt,2,Juan de Fuca Strait,12,2018-08-11T00:00:00Z,NA,2,1,samples taken for isotopes and FA from different individuals (because too small),Y,NA,Allosmerus elongatus,Animalia,Chordata,Actinopterygii,Osmeriformes,Osmeridae,Allosmerus,species,Allosmerus elongatus
-Widow Rockfish,1,Johnston Strait,2,2018-08-01T00:00:00Z,NA,1,1,tag in mouth,Y,1,Sebastes entomelas,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Sebastidae,Sebastes,species,Sebastes entomelas
+Widow Rockfish,1,Johnston Strait,2,2018-08-01T00:00:00Z,NA,1,1,tag in mouth,Y,1,Sebastes,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Sebastidae,Sebastes,species,Sebastes
 Yellowtail Rockfish,1,Johnston Strait,2,2018-08-01T00:00:00Z,NA,9,5,tags in mouths of FA fish,Y,9,Sebastes,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Sebastidae,Sebastes,species,Sebastes
 Yellowtail Rockfish,1,Johnston Strait,5,2018-08-03T00:00:00Z,NA,1,0,NA,Y,1,Sebastes,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Sebastidae,Sebastes,species,Sebastes
 Zoarcidae,1,Johnston Strait,6,2018-08-04T00:00:00Z,NA,29,5,NA,Y,NA,NA,Animalia ,Chordata,Teleostei,Perciformes,Zoarcidae,NA,family,Zoarcidae

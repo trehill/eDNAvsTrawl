@@ -245,5 +245,18 @@ accumulation_curves.R
 	curve_all_final.png
 	
 	
+Overview.R
+	goal: make table that includes the LCT, detection method (at gamma level), 
+	incidence, and mean biomass 
+
+	inputs: 
+	"gamma_spp_count_A.csv"
+	"species_biomass_mean_all_A.csv"
+	"eDNA_allsets_analysisA.csv"
+	"trawlweight_allsets_analysisA.csv"
+	
+	outputs: 
+	"overview_A.csv"
+
 
   

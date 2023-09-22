@@ -108,7 +108,7 @@ write_csv(data,
           here("Processed_data",
                "datasets",
                "biomass",
-               "biomass_all.csv")) 
+               "biomass_all_A.csv")) 
 
 #Plot ####
 #compare biomass density of BOTH to ONLY trawl using a box-plot
@@ -130,8 +130,8 @@ ggsave("./Outputs/analysis_a/biomass/biomass_box_all.png",
 #find mean of groups 
 both <- subset(data, gamma_detection_method == c('both eDNA/trawl'))
 trawl_o <- subset(data, gamma_detection_method == c('only trawl'))
-mean(both$biomass_index) #0.98
-mean(trawl_o$biomass_index) #0.04312
+mean(both$biomass_index) #1.005186
+mean(trawl_o$biomass_index) #0.036
 
 # Calculate standard errors for the 'both eDNA/trawl' group
 se_both <- data %>%
@@ -143,8 +143,8 @@ se_trawl_only <- data %>%
   filter(gamma_detection_method == 'only trawl') %>%
   summarise(se_biomass = sd(biomass_index) / sqrt(n()))
 
-se_both$se_biomass  # Standard error for 'both eDNA/trawl' group, 0.300
-se_trawl_only$se_biomass  # Standard error for 'only trawl' group, 0.038
+se_both$se_biomass  # Standard error for 'both eDNA/trawl' group, 0.307
+se_trawl_only$se_biomass  # Standard error for 'only trawl' group, 0.0320
 
 
 #STAT ANALYSIS ####
@@ -159,7 +159,7 @@ se_trawl_only$se_biomass  # Standard error for 'only trawl' group, 0.038
 with(data, shapiro.test(biomass_index[gamma_detection_method == "both eDNA/trawl"])) #p = 2.2e-16
 
 # Shapiro-Wilk normality test for only trawl biomass index 
-with(data, shapiro.test(biomass_index[gamma_detection_method == "only trawl"])) #p=0.00035
+with(data, shapiro.test(biomass_index[gamma_detection_method == "only trawl"])) #p=05.953e-05
 
 #results: p values < 0.05 
 #the data is not normally distributed
@@ -168,13 +168,13 @@ with(data, shapiro.test(biomass_index[gamma_detection_method == "only trawl"])) 
 data$biomass_index <- log(data$biomass_index)
 
 #now check for normal distribution
-with(data, shapiro.test(biomass_index[gamma_detection_method == "both eDNA/trawl"])) #p = 0.1839
-with(data, shapiro.test(biomass_index[gamma_detection_method == "only trawl"])) #p=0.05863
+with(data, shapiro.test(biomass_index[gamma_detection_method == "both eDNA/trawl"])) #p = 0.1682 (normal)
+with(data, shapiro.test(biomass_index[gamma_detection_method == "only trawl"])) #p=0.104 (normal)
 
 #now we have a normal distribution
 
 #check variance homogeneity 
-res.ftest <- var.test(biomass_index ~ gamma_detection_method, data = data) #p=0.05863
+res.ftest <- var.test(biomass_index ~ gamma_detection_method, data = data) #p=0.4307
 res.ftest
 #p > 0.05, there is difference in NO variance of two sets of data 
 
@@ -183,13 +183,13 @@ res.ftest
 
 #one-sided
 t.test(biomass_index ~ gamma_detection_method, data=data)
-#t=2.734, df=5, p-value=0.04055
-#means are statistically difference 
+#t=3.4526, df=6.6, p-value=0.01162
+#means are NOT statistically difference 
 
 #two-sided
 #is both(ma) > only trawl(mb), Ha:mA>mB (greater), (one-tailed two-sample t test )
 t.test(biomass_index ~ gamma_detection_method, data = data,
        var.equal = TRUE, alternative = "greater")
 
-#t = 1.976, df = 86, p-value= 0.025
+#t = 2.535, df = 85, p-value= 0.006538
 

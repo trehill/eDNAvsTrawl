@@ -33,6 +33,7 @@ ASVbysite <- read.csv(here::here("Processed_data",
                                  "data12Se_asvmatrix_nc_lor_nfc.csv"),
                       head=TRUE)
 
+ncol(ASVbysite) #85
 
 sample_data <- read.csv(here::here("Processed_data", 
                                    "eDNA",
@@ -368,7 +369,7 @@ ASVbysite <- read.csv(here::here("Processed_data",
                                  "data12Su_asvmatrix_nc_lor_nfc.csv"),
                       head=TRUE)
 
-
+ncol(ASVbysite) #48
 LCA_method <- read.csv(here::here("Raw_data", 
                                   "eDNA",
                                   "12s",

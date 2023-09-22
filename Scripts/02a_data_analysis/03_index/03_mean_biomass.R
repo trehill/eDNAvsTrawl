@@ -13,7 +13,7 @@ library(dplyr)
 data <- read.csv(here::here("Processed_data", 
                             "datasets",
                             "biomass",
-                            "biomass_all.csv"),
+                            "biomass_all_A.csv"),
                  head=TRUE)
 
 #MEAN BIOMASS PER SPECIES ####
@@ -35,7 +35,7 @@ write_csv(df,
           here("Processed_data",
                "datasets",
                "biomass",
-               "species_biomass_mean_all.csv")) 
+               "species_biomass_mean_all_A.csv")) 
 
 #SUM BIOMASS PER SPECIES ####
 x <- data
@@ -53,7 +53,7 @@ write_csv(df,
           here("Processed_data",
                "datasets",
                "biomass",
-               "species_biomass_sum_all.csv")) 
+               "species_biomass_sum_all_A.csv")) 
 
 #EULER PLOT ####
 #read data
@@ -83,6 +83,8 @@ data_wide_not_both <- subset(data_wide, both == FALSE)
 
 #bind together
 data_new <- rbind(data_wide_both, data_wide_not_both)
+data_new <- select(data_new, c('LCT', 'both', 'trawl'))
+data_new <- distinct(data_new)
 data_new <- select(data_new, c('both', 'trawl'))
 
 #plot

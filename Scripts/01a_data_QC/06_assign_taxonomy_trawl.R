@@ -79,7 +79,7 @@ unique(fixnames$species)
 
 #all Sebastes grouped
 fixnames <- data.frame(lapply(fixnames, function(x) {
-  gsub("Sebastes entemolas", "Sebastes", x) #for some reason this species name does not match across datasets
+  gsub("Sebastes entomelas", "Sebastes", x) #for some reason this species name does not match across datasets
   
 }))
 
@@ -187,7 +187,7 @@ unique(fixnames$species)
 
 #all Sebastes grouped
 fixnames <- data.frame(lapply(fixnames, function(x) {
-  gsub("Sebastes entemolas", "Sebastes", x) #for some reason this species name does not match across datasets
+  gsub("Sebastes entomelas", "Sebastes", x) #for some reason this species name does not match across datasets
   
 }))
 
@@ -230,6 +230,8 @@ fixnames <- data.frame(lapply(fixnames, function(x) {
   gsub("Zoarcidae A", "Zoarcidae", x) 
   
 }))
+
+
 
 unique(fixnames$common_name)
 

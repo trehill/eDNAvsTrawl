@@ -66,7 +66,6 @@ data <- data.frame(lapply(data_new, function(x) {
 data <- data.frame(lapply(data, function(x) {
   gsub("only trawl", "trawl", x) }))
 
-
 #let's plot!
 
 #Individual Length Distributions ####
@@ -109,7 +108,10 @@ plot <- speciestraits %>%
     name = "detection", guide = "legend"
   ) +
   coord_cartesian(clip = "off") +
-  theme_ridges(grid = FALSE)
+  theme_ridges(grid = FALSE) +
+  theme(axis.text = element_text(size = 20),  # Adjust the size of tick labels
+        axis.title = element_text(size = 20))  # Adjust the size of axis titles
+
 
 
 plot 
@@ -117,6 +119,50 @@ plot
 ggsave("./Outputs/analysis_a/traits/max_length/trawleDNA_density_max.png", 
        plot = plot,
        width = 10, height = 6, units = "in")
+
+#T-TEST (all eDNA vs. all trawl) ####
+#T-test for statistical difference between mean lengths of ALL trawl and ALL eDNA 
+#perform t-test 
+#http://www.sthda.com/english/wiki/unpaired-two-samples-t-test-in-r
+
+#CHECK  T-TEST ASSUMPTIONS
+#check normality (p > 0.05)
+tdata <- speciestraits
+# Shapiro-Wilk normality test for eDNA length
+tdata$max_length_cm <- as.numeric(speciestraits$max_length_cm)
+with(tdata, shapiro.test(max_length_cm[gamma_detection_method == "eDNA"])) #p = 8.728e-07(not normal)
+
+# Shapiro-Wilk normality test for trawl length
+with(tdata, shapiro.test(max_length_cm[gamma_detection_method == "trawl"])) #p=2.007 (normal)
+
+#results: p values < 0.05 
+#the data is not normally distributed
+#we must standardize the data by logging it! (probably suppost to do anyways)
+
+tdata$max_length_cm <- log(tdata$max_length_cm)
+
+#now check for normal distribution
+# Shapiro-Wilk normality test for eDNA length
+with(tdata, shapiro.test(max_length_cm[gamma_detection_method == "eDNA"])) #p = 0.1808 (normal)
+
+# Shapiro-Wilk normality test for trawl length
+with(tdata, shapiro.test(max_length_cm[gamma_detection_method == "trawl"])) #p=0.07762 (normal)
+#now we have a normal distribution!
+
+#check variance homogeneity 
+res.ftest <- var.test(max_length_cm ~ gamma_detection_method, data = tdata) #p=0.1609
+res.ftest
+#p > 0.05, there is difference in NO variance of two sets of data 
+
+#T-test 
+#P<0.05 = statistically significant 
+
+#two-sample t-test
+#two-sided (are the means different, we dont care if they are greater or less than)
+t.test(max_length_cm ~ gamma_detection_method, data=tdata)
+#t=-1.9579, df=49, p-value= 0.05594
+#means are not statistically different
+
 
 #Species + Individual Length Distributions ####
 #goal: make a density plot like above with four rows 
@@ -136,7 +182,7 @@ colnames(catch) <- c('LCT','length_cm') #change column names
 catch$detection <- c('trawl individuals')
 
 #merge all data
-length <- rbind(catch, data2) #this includes non-fish... should we get rid of them? 
+length <- rbind(catch, data2) 
 
 #plot
 length <- distinct(length) # we only want one observation per species 
@@ -145,13 +191,14 @@ plot <- ggplot(length,
                aes(x = length_cm, 
                    y = detection, 
                    fill = detection)) +
-  geom_density_ridges(bandwidth=8) + 
+  geom_density_ridges(bandwidth=12) + 
   theme_ridges() +
   labs("") +
   xlab("length (cm)") + ylab("") +
   theme(legend.position = "none") +
   scale_fill_manual(values=c("#00AFBB","#FCC442", "#5491cf","#b9d2eb")) +
-  theme_classic()
+  theme_classic() 
+
 plot 
 
 
@@ -191,7 +238,10 @@ plot <- data %>%
     name = "detection", guide = "legend"
   ) +
   coord_cartesian(clip = "off") +
-  theme_ridges(grid = FALSE)
+  theme_ridges(grid = FALSE) +
+  theme(axis.text = element_text(size = 20),  # Adjust the size of tick labels
+        axis.title = element_text(size = 20))  # Adjust the size of axis titles
+
 
 plot
 
@@ -255,6 +305,7 @@ ggsave("./Outputs/analysis_a/traits/max_length/max_length_density.png",
 #Determining mean length of Eulachon ####
 eulachon <- subset(trawl_catch, species == c("Thaleichthys pacificus"))
 mean(eulachon$length_cm) #13.4cm
+
 
 
 

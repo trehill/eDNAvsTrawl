@@ -983,11 +983,5 @@ write_csv(final_data,
                "datasets",
                "detections_all_A.csv"))
 
-sp <- unique(final_data$LCT)
-sp <- as.data.frame(sp)
 
-write_csv(sp,
-          here("Processed_data",
-               "datasets",
-               "sppall_A.csv"))
 

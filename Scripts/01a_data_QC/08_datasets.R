@@ -7,7 +7,7 @@
 #read in packages
 library(tidyr)
 library(tidyverse)
-library(here)
+library(here) 
 library(dplyr)
 
 #read in files
@@ -83,6 +83,10 @@ ASVtaxsample12se <- ASVtaxsample12se[ASVtaxsample12se$set_number != c("TS2"), ]
 
 ASVtaxsample12su <- ASVtaxsample12su[ASVtaxsample12su$set_number != c("TS1"), ]
 ASVtaxsample12su <- ASVtaxsample12su[ASVtaxsample12su$set_number != c("TS2"), ]
+
+ASVtaxsample12su <- subset(ASVtaxsample12su, !is.na(ASVtaxsample12su[, c('set_number')]))
+ASVtaxsample12se <- subset(ASVtaxsample12se, !is.na(ASVtaxsample12se[, c('set_number')]))
+
 
 unique(ASVtaxsample12se$set_number)
 unique(ASVtaxsample12su$set_number)
