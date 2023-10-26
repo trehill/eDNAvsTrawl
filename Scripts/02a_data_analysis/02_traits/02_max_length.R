@@ -258,7 +258,7 @@ colnames(data2) <- c("LCT", "max_length_cm", "method","detection") #change colum
 data2 <- distinct(data2)
 
 plot <- ggplot(data2, aes(max_length_cm)) +
-  geom_density(aes(fill = detection), position = "stack", bw=12) + 
+  geom_density(aes(fill = detection), position = "stack", bw=20) + 
   scale_fill_manual(values=c("#00AFBB","#FCC442", "#5491cf"))+
   scale_y_discrete(expand = c(0, 0)) +
   theme_classic() + 
@@ -305,10 +305,6 @@ ggsave("./Outputs/analysis_a/traits/max_length/max_length_density.png",
 #Determining mean length of Eulachon ####
 eulachon <- subset(trawl_catch, species == c("Thaleichthys pacificus"))
 mean(eulachon$length_cm) #13.4cm
-
-
-
-
 
 
 

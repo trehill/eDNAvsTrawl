@@ -44,6 +44,15 @@ ggsave("./Outputs/analysis_a/diversity/alpha_species.png",
        plot = plot,
        width = 12, height = 2, units = "in")
 
+plot <- plot(euler(data_long, by = list(set_number)), legend = TRUE, fills = c("#5491cf","#FCC442","#00AFBB"), quantities=TRUE)
+plot 
+
+ggsave("./Outputs/analysis_a/diversity/alpha_species_wvalues.png", 
+       plot = plot,
+       width = 12, height = 2, units = "in")
+
+#percentages
+
 #give set_numbers 'level's in order of increasing depth difference between sets 
 data_long$set_number <- as.character(data_long$set_number)
 

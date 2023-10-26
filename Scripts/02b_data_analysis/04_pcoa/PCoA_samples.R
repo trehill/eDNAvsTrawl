@@ -319,7 +319,7 @@ plot
 plot <- physeq %>% 
   dist_calc(dist = "jaccard", binary = TRUE) %>% 
   ord_calc("PCoA") %>% 
-  ord_plot(color = "region", shape = "region_method", size = 2) +
+  ord_plot(color = "region", shape = "region_method", size = 4) +
   scale_color_manual(values = c("#FCC442", "#5491cf")) +
   scale_shape_manual(values = c(eDNA_northern = 1, eDNA_southern = 1, trawl_northern = 16, trawl_southern = 16)) +
   stat_chull(aes(linetype = region_method, color = region)) +
@@ -338,6 +338,7 @@ plot <- plot + theme(
   legend.text = element_text(size = 14)  # Increase font size for legend text
 )
 
+plot 
 ggsave("./Outputs/analysis_b/pcoa/PCoA_panel2.png", 
        plot = plot,
        width = 12, height = 7, units = "in")
